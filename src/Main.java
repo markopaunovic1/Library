@@ -70,6 +70,8 @@ public class Main {
 
                     //Vi skickar med searchInput som kommer från scanner
                         library.searchBook(searchInput);
+                      //  System.out.println("Do you want to loan the book?");
+
 
 
                     break;

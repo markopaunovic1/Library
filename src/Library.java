@@ -1,9 +1,10 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Library {
 
     static ArrayList<Book> listOfBooks = new ArrayList<>();
-
+    Scanner scan = new Scanner(System.in);
 
     public static void addInitialBooks(){
         addBookToLibrary(new Book("The Lord of the Rings", "RR Tolkien"));
@@ -11,6 +12,7 @@ public class Library {
         addBookToLibrary(new Book("Java for dummies", "B Burd"));
         addBookToLibrary(new Book("Java for experts", "B Burd"));
         addBookToLibrary(new Book("Harry Potter", "JK.Rowling"));
+
     }
 
     public static void addBookToLibrary(Book newBook){
@@ -19,26 +21,27 @@ public class Library {
     }
 
     public void searchBook(String searchInput) {
-        // kolla om boken finns i library
-        for (Book book: listOfBooks) {
-            //kolla om den book vi nuvarande loopar igenom
-            //dens .bookName innehåller searchInput
-            if(book.bookName.contains(searchInput)){
-                System.out.println("Book found: ");
-                System.out.println(book);
-            }
-            else  {
-                book.equals(searchInput);
-                System.out.println("No book was found.");
-            }
-        }
+
+
+        for (Book b: listOfBooks) {
+            if (b.bookName.equals(searchInput)){
+                System.out.println("Found book: " + b);
+
+            if(b.isAvailable() == true){
+
+            System.out.println("Do you want to borrow it? yes/no?");
+            String wantsToBorrow = scan.nextLine();
+
+            if (wantsToBorrow.equals("yes")) {
+                loan(b);
+                break;
+            }}}}
     }
 
 
     public static void loan(Book book){
 
         if(book.isAvailable() == true){
-            System.out.println("It's available");
             book.available = false;
             System.out.println("You have now borrowed the book");
         } else {
