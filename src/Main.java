@@ -70,6 +70,8 @@ public class Main {
 
                     //Vi skickar med searchInput som kommer från scanner
                         library.searchBook(searchInput);
+
+
                     break;
 
                 case 3:
@@ -87,18 +89,16 @@ public class Main {
 
                     break;
 
-                case 6:
+               /* case 6:
                     Scanner chooseBook = new Scanner(System.in);
 
                     System.out.println("6. Loan a book");
                     System.out.println("Choose a book to loan:");
                     library.printListOfBooks();
                     String search = chooseBook.nextLine();
-
-                    
-                    library.loan(library.listOfBooks(search));
+                    // library.loan();
                     System.out.println();
-                    break;
+                    break;*/
 
                 case 7:
                     System.exit(0);

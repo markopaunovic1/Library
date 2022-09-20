@@ -20,18 +20,20 @@ public class Library {
 
     public void searchBook(String searchInput) {
         // kolla om boken finns i library
-        for (Book listedBook: listOfBooks) {
+        for (Book book: listOfBooks) {
             //kolla om den book vi nuvarande loopar igenom
             //dens .bookName innehåller searchInput
-            if(listedBook.bookName.contains(searchInput)){
-                System.out.println("Found book: ");
-                System.out.println(listedBook);
+            if(book.bookName.contains(searchInput)){
+                System.out.println("Book found: ");
+                System.out.println(book);
             }
-            else {
+            else  {
+                book.equals(searchInput);
                 System.out.println("No book was found.");
             }
         }
     }
+
 
     public static void loan(Book book){
 
